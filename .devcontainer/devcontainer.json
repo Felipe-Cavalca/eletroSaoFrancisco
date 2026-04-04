@@ -1,0 +1,26 @@
+{
+  "name": "eletro-sao-francisco",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "overrideCommand": false,
+  "runArgs": [
+    "--name",
+    "eletro-sao-francisco-dev"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mhutchie.git-graph"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "apache",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "root"
+}
