@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  pull_request_review:
     branches:
       - main
     types:
-      - opened
-      - synchronize
-      - reopened
+      - submitted
 
 permissions:
   contents: read
@@ -23,10 +21,13 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request_review' && github.event.pull_request.head.sha || github.sha }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -38,7 +39,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    if: github.event_name == 'push' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     environment:
       name: github-pages
