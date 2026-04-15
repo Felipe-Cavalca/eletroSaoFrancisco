@@ -1,0 +1,53 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.35rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-weight: 850;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: #ffffff;
+  box-shadow: 0 18px 36px rgba(17, 19, 18, 0.2);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--accent);
+  box-shadow: 0 18px 38px rgba(10, 122, 83, 0.22);
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.68);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: rgba(10, 122, 83, 0.4);
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .btn {
+    width: 100%;
+    min-height: 3rem;
+    padding-inline: 1rem;
+  }
+}

@@ -1,0 +1,128 @@
+.site-header {
+  position: fixed;
+  top: 0.85rem;
+  left: 50%;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(980px, calc(100vw - 2rem));
+  min-height: 3.25rem;
+  padding: 0.45rem;
+  border: 1px solid rgba(17, 19, 18, 0.08);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 14px 42px rgba(17, 19, 18, 0.08);
+  backdrop-filter: blur(20px);
+  transform: translateX(-50%);
+}
+
+.js-enabled .site-header[data-reveal] {
+  transform: translateX(-50%) translateY(-14px);
+}
+
+.js-enabled .site-header[data-reveal].is-visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+  padding-left: 0.35rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-copy strong {
+  overflow: hidden;
+  max-width: 16rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0 0.85rem;
+  border-radius: var(--radius-pill);
+  color: var(--muted-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    top: 0.55rem;
+    width: min(100vw - 1rem, 560px);
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
+  .brand-copy strong {
+    max-width: 9.5rem;
+  }
+
+  .site-nav a {
+    padding-inline: 0.55rem;
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    justify-content: center;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .brand-copy {
+    display: none;
+  }
+}

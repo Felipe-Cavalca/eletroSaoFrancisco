@@ -3,79 +3,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eletrônica São Francisco</title>
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --primary: #38bdf8;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 20% 20%, #1e293b 0, #0b1224 35%, #0b1224 100%);
-      color: var(--text);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid #1f2937;
-      border-radius: 14px;
-      padding: 28px 32px;
-      max-width: 560px;
-      width: 100%;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-      text-align: center;
-    }
-    h1 {
-      font-size: 1.8rem;
-      letter-spacing: 0.5px;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    p {
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--primary);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.75rem;
-      margin-bottom: 16px;
-    }
-    .pulse {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--primary);
-      box-shadow: 0 0 0 0 rgba(56,189,248,0.7);
-      animation: pulse 1.6s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(56,189,248,0.7); }
-      70% { box-shadow: 0 0 0 16px rgba(56,189,248,0); }
-      100% { box-shadow: 0 0 0 0 rgba(56,189,248,0); }
-    }
-  </style>
+  <meta name="description" content="Eletrônica São Francisco: assistência técnica multimarcas em Guaratinguetá para ar-condicionado, geladeiras, TVs, micro-ondas e eletroportáteis.">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>Eletrônica São Francisco | Assistência técnica multimarcas em Guaratinguetá</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link
+    rel="preload"
+    as="image"
+    href="assets/img/bancada-tecnica-hero-960.webp"
+    imagesrcset="assets/img/bancada-tecnica-hero-640.webp 640w, assets/img/bancada-tecnica-hero-960.webp 960w, assets/img/bancada-tecnica-hero-1280.webp 1280w"
+    imagesizes="(max-width: 640px) 100vw, 864px"
+    type="image/webp"
+    fetchpriority="high"
+  >
+  <link rel="stylesheet" href="assets/css/config/variables.css">
+  <link rel="stylesheet" href="assets/css/base/reset.css">
+  <link rel="stylesheet" href="assets/css/base/layout.css">
+  <link rel="stylesheet" href="assets/css/base/utilities.css">
+  <link rel="stylesheet" href="assets/css/components/buttons.css">
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/cards.css">
+  <link rel="stylesheet" href="assets/css/sections/hero.css">
+  <link rel="stylesheet" href="assets/css/sections/atendimento.css">
+  <link rel="stylesheet" href="assets/css/sections/marcas.css">
+  <link rel="stylesheet" href="assets/css/sections/contato.css">
+  <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>
-  <main class="card">
-    <div class="badge"><span class="pulse"></span>Em construção</div>
-    <h1>Eletrônica São Francisco</h1>
-    <p>Ambiente pronto! O devcontainer já inicia com Apache servindo este diretório. Edite este <code>index.html</code> para começar o site.</p>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" data-reveal>
+    <a class="brand" href="#hero" aria-label="Voltar ao topo">
+      <span class="brand-mark" aria-hidden="true">ESF</span>
+      <span class="brand-copy">
+        <strong>Eletrônica São Francisco</strong>
+        <small>Guaratinguetá - SP</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#atendimento">Atendimento</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <section id="hero" class="hero" aria-labelledby="hero-title" data-scroll-progress>
+      <div class="hero__copy shell-container">
+        <a class="hero-logo" href="#hero" aria-label="Eletrônica São Francisco">
+          <img src="assets/img/favicon.svg" width="64" height="64" alt="">
+          <span>
+            <strong>Eletrônica São Francisco</strong>
+            <small>Guaratinguetá - SP</small>
+          </span>
+        </a>
+        <p class="eyebrow" data-reveal>Assistência técnica multimarcas</p>
+        <h1 id="hero-title" class="hero-title" data-reveal style="--delay: 1;">
+          Pronto para ligar de novo.
+        </h1>
+        <p class="hero-description" data-reveal style="--delay: 2;">
+          Reparos para aparelhos que sustentam a rotina da casa e do comércio leve, com diagnóstico direto e atendimento local.
+        </p>
+
+        <div class="hero-actions" data-reveal style="--delay: 3;">
+          <a class="btn btn--primary" href="https://wa.me/551231221853?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Eletr%C3%B4nica%20S%C3%A3o%20Francisco." target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+          <a class="btn btn--ghost" href="#atendimento">Ver atendimento</a>
+        </div>
+      </div>
+
+      <div class="hero__stage shell-container" aria-hidden="true">
+        <figure class="hero-visual">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/img/bancada-tecnica-hero-640.webp 640w, assets/img/bancada-tecnica-hero-960.webp 960w, assets/img/bancada-tecnica-hero-1280.webp 1280w"
+              sizes="(max-width: 640px) 100vw, 864px"
+            >
+            <img
+              src="assets/img/bancada-tecnica-hero.jpg"
+              width="1600"
+              height="900"
+              alt=""
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </picture>
+          <figcaption>
+            <span>orçamento</span>
+            <strong>sem compromisso</strong>
+          </figcaption>
+        </figure>
+
+        <div class="hero-spec hero-spec--warranty">
+          <span>90</span>
+          <p>dias de garantia técnica</p>
+        </div>
+        <div class="hero-spec hero-spec--brands">
+          <span>15+</span>
+          <p>marcas atendidas</p>
+        </div>
+      </div>
+
+      <button class="scroll-cue" type="button" data-scroll-target="#destaques" aria-label="Ir para os destaques">
+        <span>Deslize</span>
+        <i aria-hidden="true"></i>
+      </button>
+    </section>
+
+    <section id="destaques" class="section section--intro" aria-labelledby="destaques-title">
+      <div class="section-container">
+        <div class="section-heading section-heading--wide" data-reveal>
+          <p class="eyebrow">Comece pelos destaques</p>
+          <h2 id="destaques-title">Um atendimento mais simples do primeiro contato à entrega.</h2>
+        </div>
+
+        <div class="highlight-grid">
+          <article class="highlight-card" data-reveal style="--delay: 0;">
+            <span>01</span>
+            <h3>Diagnóstico claro</h3>
+            <p>Você entende o problema, o reparo indicado e o valor antes de decidir.</p>
+          </article>
+          <article class="highlight-card" data-reveal style="--delay: 1;">
+            <span>02</span>
+            <h3>Rotina sem espera longa</h3>
+            <p>Contato por WhatsApp para enviar aparelho, marca e defeito percebido.</p>
+          </article>
+          <article class="highlight-card" data-reveal style="--delay: 2;">
+            <span>03</span>
+            <h3>Reparo com garantia</h3>
+            <p>Serviço técnico com garantia de 90 dias para você voltar ao uso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="atendimento" class="section section--atendimento" aria-labelledby="atendimento-title" data-scroll-progress>
+      <div class="section-container atendimento-layout">
+        <div class="section-heading sticky-copy" data-reveal>
+          <p class="eyebrow">Atendimento</p>
+          <h2 id="atendimento-title">Aparelhos do dia a dia, tratados com precisão.</h2>
+          <p class="section-copy">
+            Da refrigeração à bancada eletrônica, o foco é resolver o que parou sem complicar o caminho.
+          </p>
+          <a class="text-link" href="https://wa.me/551231221853?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Eletr%C3%B4nica%20S%C3%A3o%20Francisco." target="_blank" rel="noreferrer">Enviar detalhes do aparelho</a>
+        </div>
+
+        <div id="services-grid" class="services-grid" aria-label="Serviços e linhas atendidas"></div>
+
+        <noscript>
+          <div class="services-grid" aria-label="Serviços e linhas atendidas">
+            <article class="service-card">
+              <div class="service-glyph" aria-hidden="true">AC</div>
+              <h3 class="service-title">Ar-condicionado</h3>
+              <p class="service-description">Instalação, higienização e manutenção em linhas split.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-glyph" aria-hidden="true">FR</div>
+              <h3 class="service-title">Geladeiras</h3>
+              <p class="service-description">Diagnóstico e manutenção em refrigeração doméstica.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-glyph" aria-hidden="true">TV</div>
+              <h3 class="service-title">TV e áudio</h3>
+              <p class="service-description">Análise de bancada para eletrônicos de uso diário.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-glyph" aria-hidden="true">MW</div>
+              <h3 class="service-title">Micro-ondas</h3>
+              <p class="service-description">Reparo com foco em segurança e funcionamento.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-glyph" aria-hidden="true">EP</div>
+              <h3 class="service-title">Eletroportáteis</h3>
+              <p class="service-description">Pequenos eletros de várias marcas e linhas.</p>
+            </article>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="section section--process" aria-labelledby="process-title" data-scroll-progress>
+      <div class="section-container process-layout">
+        <figure class="process-media">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/img/diagnostico-bancada-640.webp 640w, assets/img/diagnostico-bancada-768.webp 768w, assets/img/diagnostico-bancada-960.webp 960w, assets/img/diagnostico-bancada-1280.webp 1280w"
+              sizes="(max-width: 980px) calc(100vw - 1.1rem), 638px"
+            >
+            <img
+              src="assets/img/diagnostico-bancada.jpg"
+              width="1400"
+              height="1000"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+        </figure>
+
+        <div class="process-copy" data-reveal>
+          <p class="eyebrow">Como funciona</p>
+          <h2 id="process-title">Menos ruído. Mais resposta.</h2>
+          <ol class="process-list">
+            <li>
+              <span>01</span>
+              <p>Envie a marca, o aparelho e o defeito percebido.</p>
+            </li>
+            <li>
+              <span>02</span>
+              <p>Receba a orientação inicial e combine a avaliação.</p>
+            </li>
+            <li>
+              <span>03</span>
+              <p>Aprove o orçamento e acompanhe a entrega do reparo.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="marcas" class="section section--brands" aria-labelledby="marcas-title" data-scroll-progress data-scroll-depth="36">
+      <div class="section-container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">Marcas</p>
+          <h2 id="marcas-title">Multimarcas sem excesso de conversa.</h2>
+          <p class="section-copy">
+            Atendimento para fabricantes recorrentes em eletrodomésticos, climatização e eletroportáteis.
+          </p>
+        </div>
+
+        <ul id="brand-grid" class="brand-grid" aria-label="Marcas atendidas"></ul>
+
+        <noscript>
+          <ul class="brand-grid" aria-label="Marcas atendidas">
+            <li class="brand-pill"><span>Atlas</span></li>
+            <li class="brand-pill"><span>Cadence</span></li>
+            <li class="brand-pill"><span>Dellar</span></li>
+            <li class="brand-pill"><span>DeLonghi</span></li>
+            <li class="brand-pill"><span>Facilima</span></li>
+            <li class="brand-pill"><span>Gama</span></li>
+            <li class="brand-pill"><span>Lenoxx</span></li>
+            <li class="brand-pill"><span>Mallory</span></li>
+            <li class="brand-pill"><span>MasterFrio</span></li>
+            <li class="brand-pill"><span>Mondial</span></li>
+            <li class="brand-pill"><span>Mueller</span></li>
+            <li class="brand-pill"><span>Newmaq</span></li>
+            <li class="brand-pill"><span>Oster</span></li>
+            <li class="brand-pill"><span>Suggar</span></li>
+            <li class="brand-pill"><span>Ventisol</span></li>
+          </ul>
+        </noscript>
+      </div>
+    </section>
+
+    <section id="contato" class="section section--contact" aria-labelledby="contato-title" data-scroll-progress>
+      <div class="section-container contact-layout">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow">Contato</p>
+          <h2 id="contato-title">Conte o que parou. A resposta começa por aí.</h2>
+          <p class="section-copy">
+            Envie a marca, o modelo e o comportamento do aparelho para agilizar o primeiro retorno.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn--primary" href="https://wa.me/551231221853?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Eletr%C3%B4nica%20S%C3%A3o%20Francisco." target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Germano+de+Carvalho+39,+Parque+S%C3%A3o+Francisco+II,+Guaratinguet%C3%A1+-+SP,+12509-360" target="_blank" rel="noreferrer">Abrir rota</a>
+          </div>
+        </div>
+
+        <aside class="contact-panel" data-reveal style="--delay: 1;">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/img/atendimento-loja-640.webp 640w, assets/img/atendimento-loja-768.webp 768w, assets/img/atendimento-loja-960.webp 960w, assets/img/atendimento-loja-1200.webp 1200w"
+              sizes="(max-width: 980px) calc(100vw - 1.1rem), 474px"
+            >
+            <img
+              src="assets/img/atendimento-loja.jpg"
+              width="1200"
+              height="700"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span class="contact-label">Telefone / WhatsApp</span>
+              <a href="https://wa.me/551231221853?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Eletr%C3%B4nica%20S%C3%A3o%20Francisco." target="_blank" rel="noreferrer">(12) 3122-1853</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">E-mail</span>
+              <a href="mailto:eletrosaofrancisco@gmail.com">eletrosaofrancisco@gmail.com</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-label">Endereço</span>
+              <address>Rua Germano de Carvalho, 39<br>Parque São Francisco II<br>Guaratinguetá - SP<br>12509-360</address>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
   </main>
 </body>
 </html>

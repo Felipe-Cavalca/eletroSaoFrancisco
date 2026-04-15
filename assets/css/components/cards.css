@@ -1,0 +1,8 @@
+.highlight-card,
+.service-card,
+.contact-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-md);
+}
