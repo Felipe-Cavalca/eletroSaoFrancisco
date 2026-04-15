@@ -2,7 +2,7 @@ FROM httpd:2.4
 
 # Add some common utilities
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends bash curl nano git procps iproute2 \
+    && apt-get install -y --no-install-recommends bash curl nano git nodejs npm procps iproute2 \
     && rm -rf /var/lib/apt/lists/*
 
 # Apache tuned to serve the devcontainer workspace
@@ -11,3 +11,5 @@ RUN echo 'ServerName localhost\nDocumentRoot "/workspaces/eletroSaoFrancisco"\n<
   && sed -i "s/^Listen 80/Listen 8080/" /usr/local/apache2/conf/httpd.conf
 
 WORKDIR /workspaces/eletroSaoFrancisco
+
+EXPOSE 8080

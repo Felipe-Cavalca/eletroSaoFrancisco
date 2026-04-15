@@ -1,5 +1,5 @@
 {
-  "name": "eletro-sao-francisco",
+  "name": "eletroSaoFrancisco-dev",
   "build": {
     "dockerfile": "Dockerfile"
   },
@@ -7,6 +7,9 @@
   "runArgs": [
     "--name",
     "eletro-sao-francisco-dev"
+  ],
+  "appPort": [
+    "8080:8080"
   ],
   "customizations": {
     "vscode": {
@@ -18,7 +21,8 @@
   "forwardPorts": [8080],
   "portsAttributes": {
     "8080": {
-      "label": "apache",
+      "label": "GitHub Pages preview",
+      "protocol": "http",
       "onAutoForward": "notify"
     }
   },
