@@ -1,0 +1,111 @@
+.shell-container,
+.section-container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+#conteudo:focus {
+  outline: none;
+}
+
+.section {
+  position: relative;
+  padding: var(--section-y) 0;
+}
+
+.section-container {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.section-heading {
+  max-width: 42rem;
+}
+
+.section-heading--wide {
+  max-width: 62rem;
+}
+
+.section-heading--center {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading h2,
+.contact-copy h2,
+.process-copy h2 {
+  margin: 0.75rem 0 0;
+  color: var(--ink);
+  font-size: 4rem;
+  line-height: 0.98;
+  font-weight: 900;
+}
+
+.section-copy {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.section--intro {
+  background: var(--surface);
+}
+
+.section--process {
+  background: var(--contrast);
+  color: #f6f8f5;
+}
+
+.section--process .eyebrow,
+.section--process .process-copy h2 {
+  color: #ffffff;
+}
+
+.section--process .section-copy {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 980px) {
+  .section-heading h2,
+  .contact-copy h2,
+  .process-copy h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell-container,
+  .section-container {
+    width: min(1180px, calc(100vw - 1.1rem));
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-container {
+    gap: 1.65rem;
+  }
+
+  .section-heading h2,
+  .contact-copy h2,
+  .process-copy h2 {
+    font-size: 2.25rem;
+    line-height: 1.04;
+  }
+
+  .section-copy {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-heading h2,
+  .contact-copy h2,
+  .process-copy h2 {
+    font-size: 1.95rem;
+  }
+}

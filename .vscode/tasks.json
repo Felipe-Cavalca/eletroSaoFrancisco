@@ -13,6 +13,27 @@
             "linux": {
                 "command": "git remote | grep github && git remote set-url github https://github.com/Felipe-Cavalca/.github.git || git remote add github https://github.com/Felipe-Cavalca/.github.git; git fetch github && git merge github/latest-release --allow-unrelated-histories"
             }
+        },
+        {
+            "label": "validar preview estático",
+            "type": "shell",
+            "command": "curl -I http://127.0.0.1:8080/",
+            "problemMatcher": [],
+            "linux": {
+                "command": "curl -I http://127.0.0.1:8080/"
+            }
+        },
+        {
+            "label": "rodar testes",
+            "type": "shell",
+            "command": "node --test scripts/*.test.mjs",
+            "problemMatcher": [],
+            "windows": {
+                "command": "node --test scripts\\*.test.mjs"
+            },
+            "linux": {
+                "command": "node --test scripts/*.test.mjs"
+            }
         }
     ]
 }
