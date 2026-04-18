@@ -1,91 +1,75 @@
-# 📦 .github Repository
+# Eletronica Sao Francisco
 
-> 🧰 Modelo base para repositórios com padronizações e boas práticas, como templates de issues, workflows, licenças e mais.
----
+Site institucional estatico da Eletronica Sao Francisco, assistencia tecnica multimarcas em Guaratingueta, SP.
 
-## English
+O projeto nao usa etapa de build nem gerenciador de pacotes. A pagina principal esta em `index.html` e carrega CSS, JavaScript e imagens locais a partir da pasta `assets/`.
 
-This is a **template repository** used to centralize and standardize configuration files across multiple GitHub projects.
+## Visao geral
 
-It includes common files like:
+- Landing page responsiva em HTML, CSS e JavaScript puro.
+- Conteudo em portugues do Brasil.
+- Secoes para atendimento, processo, marcas e contato.
+- Dados de servicos e marcas centralizados em `assets/js/config/site-data.js`.
+- Imagens responsivas com versoes JPG e WebP.
+- Teste automatizado para os calculos de progresso de rolagem.
 
-- ✅ Issue templates
-- ⚙️ GitHub Actions workflows
-- 📄 License
-- 🏷️ Label configuration
-- 💰 Funding metadata
+## Estrutura
 
-### 🔧 How to Use
+```text
+.
+|-- index.html
+|-- assets/
+|   |-- css/
+|   |   |-- base/
+|   |   |-- components/
+|   |   |-- config/
+|   |   `-- sections/
+|   |-- img/
+|   `-- js/
+|       |-- config/
+|       |-- features/
+|       |-- sections/
+|       `-- utils/
+|-- scripts/
+|   `-- scroll-progress.test.mjs
+`-- README.md
+```
 
-1. Click **"Use this template"** on GitHub
-2. Or clone manually:
+## Como executar localmente
+
+Por usar JavaScript como modulo, prefira servir a pasta do projeto com um servidor estatico local.
+
+Com Python:
 
 ```bash
-git clone https://github.com/Felipe-Cavalca/.github.git
+python -m http.server 8080
 ```
 
-### 📁 Project Structure
-```
-.github/
-├── ISSUE_TEMPLATE/       # Issue templates
-├── workflows/            # GitHub Actions workflows
-├── FUNDING.yml           # Funding metadata
-├── labels.yml            # Label configuration
-└── PULL_REQUEST_TEMPLATE.md
+Depois acesse:
 
-.vscode/
-├── extensions.json        # Recommended VSCode extensions
-└── tasks.json             # VSCode tasks
-
-LICENSE                   # Project license
-README.md                 # This README
-SECURITY.md               # Security policy
+```text
+http://localhost:8080
 ```
 
-### 📌 Versions
-[👉 Releases](https://github.com/Felipe-Cavalca/.github/releases)
+Tambem e possivel usar uma extensao de servidor estatico do editor, como Live Server no VS Code.
 
----
+## Testes
 
-## Português
+Execute o teste disponivel com Node.js:
 
-Este é um **repositório modelo** criado para centralizar e padronizar arquivos de configuração usados em diversos projetos no GitHub.
-
-Ele inclui:
-
- - ✅ Templates de issues
- - ⚙️ Workflows do GitHub Actions
- - 📄 Licença
- - 🏷️ Configuração de labels
- - 💰 Metadados de financiamento
-
-### 🔧 Como Usar
-
-Clique em "Use this template" no GitHub
-
-Ou clone manualmente:
 ```bash
-git clone https://github.com/Felipe-Cavalca/.github.git
+node --test scripts/scroll-progress.test.mjs
 ```
 
-### 📁 Estrutura do Projeto
+## Edicao de conteudo
 
-```
-.github/
-├── ISSUE_TEMPLATE/       # Templates de issues
-├── workflows/            # Workflows do GitHub Actions
-├── FUNDING.yml           # Metadados de financiamento
-├── labels.yml            # Configuração de labels
-└── PULL_REQUEST_TEMPLATE.md
+- Textos principais da pagina: `index.html`.
+- Servicos e marcas renderizados via JavaScript: `assets/js/config/site-data.js`.
+- Estilos globais e tokens visuais: `assets/css/config/variables.css`.
+- Imagens usadas no site: `assets/img/`.
 
-.vscode/
-├── extensions.json        # Extensões recomendadas para VSCode
-└── tasks.json             # Tarefas para VSCode
+Ao trocar fotos, mantenha os nomes usados no HTML ou atualize os caminhos correspondentes. Para preservar desempenho, gere tambem as versoes WebP responsivas indicadas em `assets/img/README.md`.
 
-LICENSE                   # Licença do projeto
-README.md                 # Este README
-```
+## Licenca
 
-### 📌 Versões
-
-[👉 Releases no GitHub](https://github.com/Felipe-Cavalca/.github/releases)
+Distribuido sob a licenca MIT. Consulte `LICENSE` para mais detalhes.
